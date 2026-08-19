@@ -11,7 +11,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String _variavelqueseraAlterada = "texto padrão";
-  final _seuTexto = TextEditingController();
+  final _notap1 = TextEditingController();
+  final _notap2 = TextEditingController();
+  final _notap3 = TextEditingController();
+  final _notal = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +36,10 @@ class _HomeState extends State<Home> {
           Text("Hoje eu estou mais feliz"),
           Meutexto (_variavelqueseraAlterada, Colors.blue),
           Meutexto ("Texto 05 estilizado", Colors.white),
-          input("Digite seu texto","Escreva aqui" , controller: _seuTexto),
-
+          input("Digite seu texto","Escreva aqui" , controller: _notap1),
+          input("Digite seu texto","Escreva aqui" , controller: _notap2),
+          input("Digite seu texto","Escreva aqui" , controller: _notap3),
+          input("Digite seu texto","Escreva aqui" , controller: _notal),
           botoes("Botão altera texto", onClick: _metodoAlteraTexto)
 
         ],
@@ -43,8 +48,18 @@ class _HomeState extends State<Home> {
   }
 
   void _metodoAlteraTexto() {
+   double p1 = double.tryParse(_notap1.text) ?? 0.0;
+   double p2 = double.tryParse(_notap2.text) ?? 0.0;
+   double p3 = double.tryParse(_notap3.text) ?? 0.0;
+   double l = double.tryParse(_notal.text) ?? 0.0;
+
+    double res = (p1*0.2) + (p2*0.2) + (p3*0.4) +l;
+
+
+
+
     setState(() {
-      _variavelqueseraAlterada = _seuTexto.text;
+      _variavelqueseraAlterada = "Valor" + res.toString();
     });
 
     print(_variavelqueseraAlterada);}

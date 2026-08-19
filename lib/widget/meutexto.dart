@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class Meutexto extends StatelessWidget {
 
   String texto;
@@ -15,6 +16,6 @@ class Meutexto extends StatelessWidget {
           backgroundColor: Colors.teal,
           fontSize: 44
       ),
-    );;
+    );
   }
 }
